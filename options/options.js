@@ -941,5 +941,11 @@ options.autoGenerate = function () {
 		});
 	}
 	else
-		options.createAutoClosingAlert("Sorry, can't find generator pattern. URL should end with a number.");
+	{	
+		options.createAutoClosingAlert("Pattern doesn't end with a number, cloning the 1st url.");
+
+		$('#urls .url').each(function (index, value) {
+			$(value).find('input[type=url]').val(masterInput);
+		});
+	}
 }
